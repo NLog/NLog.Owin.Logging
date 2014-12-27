@@ -49,7 +49,7 @@ The default translation table is:
 If you'd like to customize this translation table you can supply a `Func<TraceEventType, LogLevel>` to the extension above.
 
 ```C#
-using Y10t.Owin.Logging.NLogAdapter;
+using Pysco68.Owin.Logging.NLogAdapter;
 using NLog;
 using System.Diagnostics;
 
