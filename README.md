@@ -20,7 +20,7 @@ Currently there are dependencies on:
 To use the NLogAdapter with its default configuration:
 
 ```C#
-using Y10t.Owin.Logging.NLogAdapter;
+using Pysco68.Owin.Logging.NLogAdapter;
 
 public class Startup
 {
