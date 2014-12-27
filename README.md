@@ -1,4 +1,4 @@
-# Pysco68.Owin.Logging.NlogAdapter
+# Pysco68.Owin.Logging.NLogAdapter
 
 The missing NLog logging adapter for OWIN!
 
@@ -7,6 +7,13 @@ The missing NLog logging adapter for OWIN!
 There's a nuget package you can install this way:
 
 `Install-Package Pysco68.Owin.Logging.NLogAdapter`
+
+Currently there are dependencies on:
+
+| Target framework | Dependencies |
+|---|---|
+| .NET 4.0 | NLog (3.1.0.0), Owin (1.0), *Microsoft.Owin (2.1.0)* |
+| .NET 4.5 | NLog (3.1.0.0), Owin (1.0), *Microsoft.Owin (3.0.0)* |
 
 ## Using
 
