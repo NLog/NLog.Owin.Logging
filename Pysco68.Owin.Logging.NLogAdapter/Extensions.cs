@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Owin;
-using Microsoft.Owin;
+﻿using Microsoft.Owin;
 using Microsoft.Owin.Logging;
+using NLog;
+using Owin;
+using System;
+using System.Diagnostics;
 
 namespace Pysco68.Owin.Logging.NLogAdapter
 {
@@ -20,6 +18,14 @@ namespace Pysco68.Owin.Logging.NLogAdapter
             app.SetLoggerFactory(new NLogFactory());
         }
 
-
+        /// <summary>
+        /// Set the logger factory for this app builder to NLogFactory
+        /// </summary>
+        /// <param name="app"></param>
+        /// <param name="getLogLevel"></param>
+        public static void UseNLog(this IAppBuilder app, Func<TraceEventType, LogLevel> getLogLevel)
+        {
+            app.SetLoggerFactory(new NLogFactory(getLogLevel));
+        }
     }
 }
