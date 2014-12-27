@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Pysco68.Owin. Logging.NLogAdapter by pysco68</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Pysco68.Owin. Logging.NLogAdapter</h1>
+        <p>The missing NLog logging adapter for OWIN</p>
+
+        <p class="view"><a href="https://github.com/pysco68/Pysco68.Owin.Logging.NLogAdapter">View the Project on GitHub <small>pysco68/Pysco68.Owin.Logging.NLogAdapter</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/pysco68/Pysco68.Owin.Logging.NLogAdapter/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/pysco68/Pysco68.Owin.Logging.NLogAdapter/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/pysco68/Pysco68.Owin.Logging.NLogAdapter">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>There's a nuget package you can install this way:</p>
+
+<p><code>Install-Package Pysco68.Owin.Logging.NLogAdapter</code></p>
+
+<p>Currently there are dependencies on:</p>
+
+<table>
+<thead>
+<tr>
+<th>Target framework</th>
+<th>Dependencies</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.NET 4.0</td>
+<td>NLog (3.1.0.0), Owin (1.0), <em>Microsoft.Owin (2.1.0)</em>
+</td>
+</tr>
+<tr>
+<td>.NET 4.5</td>
+<td>NLog (3.1.0.0), Owin (1.0), <em>Microsoft.Owin (3.0.0)</em>
+</td>
+</tr>
+</tbody>
+</table>
+
+<h2>
+<a id="using" class="anchor" href="#using" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using</h2>
+
+<p>To use the NLogAdapter with its default configuration:</p>
+
+<div class="highlight highlight-C#"><pre><span class="pl-k">using</span> Y10t.Owin.Logging.NLogAdapter;
+
+<span class="pl-s">public</span> <span class="pl-s">class</span> <span class="pl-en">Startup</span>
+{
+    <span class="pl-s">public</span> <span class="pl-st">void</span> <span class="pl-en">Configuration</span>(<span class="pl-st">IAppBuilder</span> <span class="pl-vpf">app</span>)
+    {
+        app.UseNLog();
+    }
+}</pre></div>
+
+<p>The default translation table is:</p>
+
+<table>
+<thead>
+<tr>
+<th>TraceEventType</th>
+<th>NLog Loglevel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Critical</td>
+<td>Fatal</td>
+</tr>
+<tr>
+<td>Error</td>
+<td>Error</td>
+</tr>
+<tr>
+<td>Warning</td>
+<td>Warn</td>
+</tr>
+<tr>
+<td>Information</td>
+<td>Info</td>
+</tr>
+<tr>
+<td>Verbose</td>
+<td>Trace</td>
+</tr>
+<tr>
+<td>Start</td>
+<td>Debug</td>
+</tr>
+<tr>
+<td>Stop</td>
+<td>Debug</td>
+</tr>
+<tr>
+<td>Suspend</td>
+<td>Debug</td>
+</tr>
+<tr>
+<td>Resume</td>
+<td>Debug</td>
+</tr>
+<tr>
+<td>Transfer</td>
+<td>Debug</td>
+</tr>
+</tbody>
+</table>
+
+<p>If you'd like to customize this translation table you can supply a <code>Func&lt;TraceEventType, LogLevel&gt;</code> to the extension above.</p>
+
+<div class="highlight highlight-C#"><pre><span class="pl-k">using</span> Y10t.Owin.Logging.NLogAdapter;
+<span class="pl-k">using</span> NLog;
+<span class="pl-k">using</span> System.Diagnostics;
+
+<span class="pl-s">public</span> <span class="pl-s">class</span> <span class="pl-en">Startup</span>
+{
+    <span class="pl-s">public</span> <span class="pl-st">void</span> <span class="pl-en">Configuration</span>(<span class="pl-st">IAppBuilder</span> <span class="pl-vpf">app</span>)
+    {
+        <span class="pl-c">// make a warning out of every log message!</span>
+        app.UseNLog((lvl) =&gt; LogLevel.Warn);
+    }
+}</pre></div>
+
+<h2>
+<a id="help--contribution" class="anchor" href="#help--contribution" aria-hidden="true"><span class="octicon octicon-link"></span></a>Help / Contribution</h2>
+
+<p>If you found a bug, please create an issue. Want to contribute? Create a pull request!</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/pysco68">pysco68</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
