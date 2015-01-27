@@ -1,33 +1,34 @@
-﻿<?xml version="1.0"?>
-<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
-  <metadata>
-    <id>Pysco68.Owin.Logging.NLogAdapter</id>
-    <version>1.0.0</version>
-    <authors>Yannic "Pysco68" Staudt</authors>
-    <owners>Pysco68</owners>
-    <licenseUrl>https://github.com/pysco68/Pysco68.Owin.Logging.NlogAdapter/raw/master/LICENSE</licenseUrl>
-    <projectUrl>https://github.com/pysco68/Pysco68.Owin.Logging.NlogAdapter</projectUrl>
-    <!--<iconUrl></iconUrl>-->
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>A simple Nlog / OWIN log factory adapter</description>
-    <tags>OWIN Nlog Logging</tags>
-    <dependencies>
-      <group targetFramework="net40">
-        <dependency id="NLog" version="3.1.0.0" />
-        <dependency id="Owin" version="1.0" />
-        <dependency id="Microsoft.Owin" version="2.1.0" />
-      </group>
-      <group targetFramework="net45">
-        <dependency id="Microsoft.Owin" version="3.0.0" />
-        <dependency id="NLog" version="3.1.0.0" />
-        <dependency id="Owin" version="1.0" />
-      </group>
-    </dependencies>
-  </metadata>
-  <files>
-    <file src="bin\Release\Pysco68.Owin.Logging.NLogAdapter.dll" target="lib\net40\Pysco68.Owin.Logging.NLogAdapter.dll" />
-    <file src="bin\Release\Pysco68.Owin.Logging.NLogAdapter.pdb" target="lib\net40\Pysco68.Owin.Logging.NLogAdapter.pdb" />
-    <file src="bin\Release-Net45\Pysco68.Owin.Logging.NLogAdapter.dll" target="lib\net45\Pysco68.Owin.Logging.NLogAdapter.dll" />
-    <file src="bin\Release-Net45\Pysco68.Owin.Logging.NLogAdapter.pdb" target="lib\net45\Pysco68.Owin.Logging.NLogAdapter.pdb" />
-  </files>
-  </package>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+    <metadata>
+        <id>Pysco68.Owin.Logging.NLogAdapter</id>
+        <version>1.0.1</version>
+        <authors>Yannic "Pysco68" Staudt</authors>
+        <owners>Pysco68</owners>
+        <licenseUrl>https://github.com/pysco68/Pysco68.Owin.Logging.NlogAdapter/raw/master/LICENSE</licenseUrl>
+        <projectUrl>https://github.com/pysco68/Pysco68.Owin.Logging.NlogAdapter</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>A simple Nlog / OWIN log factory adapter</description>
+        <releaseNotes>v1.0.1:
+Updated NLog dependency to 3.2.0.0</releaseNotes>
+        <tags>OWIN Nlog Logging</tags>
+        <dependencies>
+            <group targetFramework=".NETFramework4.0">
+                <dependency id="NLog" version="3.2.0.0" />
+                <dependency id="Owin" version="1.0" />
+                <dependency id="Microsoft.Owin" version="2.1.0" />
+            </group>
+            <group targetFramework=".NETFramework4.5">
+                <dependency id="Microsoft.Owin" version="3.0.0" />
+                <dependency id="NLog" version="3.2.0.0" />
+                <dependency id="Owin" version="1.0" />
+            </group>
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="bin\Release\Pysco68.Owin.Logging.NLogAdapter.dll" target="lib\net40\Pysco68.Owin.Logging.NLogAdapter.dll" />
+        <file src="bin\Release\Pysco68.Owin.Logging.NLogAdapter.pdb" target="lib\net40\Pysco68.Owin.Logging.NLogAdapter.pdb" />
+        <file src="bin\Release-Net45\Pysco68.Owin.Logging.NLogAdapter.dll" target="lib\net45\Pysco68.Owin.Logging.NLogAdapter.dll" />
+        <file src="bin\Release-Net45\Pysco68.Owin.Logging.NLogAdapter.pdb" target="lib\net45\Pysco68.Owin.Logging.NLogAdapter.pdb" />
+    </files>
+</package>
