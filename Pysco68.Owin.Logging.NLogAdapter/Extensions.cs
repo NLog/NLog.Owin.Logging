@@ -7,6 +7,9 @@ using System.Diagnostics;
 
 namespace Pysco68.Owin.Logging.NLogAdapter
 {
+    /// <summary>
+    /// Extension class
+    /// </summary>
     public static class NlogFactoryExtensions
     {
         /// <summary>

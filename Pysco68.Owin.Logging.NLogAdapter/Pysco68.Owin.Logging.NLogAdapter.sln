@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pysco68.Owin.Logging.NLogAdapter", "Pysco68.Owin.Logging.NLogAdapter.csproj", "{23D1A639-99C4-4574-88CB-04E043BE055C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{66465FA4-F543-43FA-B4A8-CE3A2572E629}"
@@ -24,12 +26,12 @@ Global
 		Release-Net45|Any CPU = Release-Net45|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{23D1A639-99C4-4574-88CB-04E043BE055C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{23D1A639-99C4-4574-88CB-04E043BE055C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23D1A639-99C4-4574-88CB-04E043BE055C}.Debug|Any CPU.ActiveCfg = Debug-Net45|Any CPU
+		{23D1A639-99C4-4574-88CB-04E043BE055C}.Debug|Any CPU.Build.0 = Debug-Net45|Any CPU
 		{23D1A639-99C4-4574-88CB-04E043BE055C}.Debug-Net45|Any CPU.ActiveCfg = Debug-Net45|Any CPU
 		{23D1A639-99C4-4574-88CB-04E043BE055C}.Debug-Net45|Any CPU.Build.0 = Debug-Net45|Any CPU
-		{23D1A639-99C4-4574-88CB-04E043BE055C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{23D1A639-99C4-4574-88CB-04E043BE055C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23D1A639-99C4-4574-88CB-04E043BE055C}.Release|Any CPU.ActiveCfg = Release-Net45|Any CPU
+		{23D1A639-99C4-4574-88CB-04E043BE055C}.Release|Any CPU.Build.0 = Release-Net45|Any CPU
 		{23D1A639-99C4-4574-88CB-04E043BE055C}.Release-Net45|Any CPU.ActiveCfg = Release-Net45|Any CPU
 		{23D1A639-99C4-4574-88CB-04E043BE055C}.Release-Net45|Any CPU.Build.0 = Release-Net45|Any CPU
 	EndGlobalSection

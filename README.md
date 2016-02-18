@@ -12,8 +12,7 @@ Currently there are dependencies on:
 
 | Target framework | Dependencies |
 |---|---|
-| .NET 4.0 | NLog (3.2.0.0), Owin (1.0), *Microsoft.Owin (2.1.0)* |
-| .NET 4.5 | NLog (3.2.0.0), Owin (1.0), *Microsoft.Owin (3.0.0)* |
+| .NET 4.5 | NLog (>= 4.0.0.0), Owin (>= 1.0) |
 
 ## Using
 

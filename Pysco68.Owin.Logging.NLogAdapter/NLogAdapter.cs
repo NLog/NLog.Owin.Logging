@@ -6,6 +6,9 @@
     using System.Collections.Generic;
     using System.Diagnostics;
 
+    /// <summary>
+    /// The OWIN ILoggerFactory implementation for NLog
+    /// </summary>
     public class NLogFactory : ILoggerFactory
     {
         /// <summary>
@@ -104,7 +107,7 @@
                     return false;
                 }
 
-                this._logger.Log(level, formatter(state, exception), exception);
+                this._logger.Log(level, exception, formatter(state, exception));
                 return true;
             }
         }
