@@ -3,7 +3,6 @@
     using Microsoft.Owin.Logging;
     using NLog;
     using System;
-    using System.Collections.Generic;
     using System.Diagnostics;
 
     /// <summary>

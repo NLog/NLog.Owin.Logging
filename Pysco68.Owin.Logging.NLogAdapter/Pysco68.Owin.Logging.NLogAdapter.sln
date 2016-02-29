@@ -21,19 +21,13 @@ EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
-		Debug-Net45|Any CPU = Debug-Net45|Any CPU
 		Release|Any CPU = Release|Any CPU
-		Release-Net45|Any CPU = Release-Net45|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{23D1A639-99C4-4574-88CB-04E043BE055C}.Debug|Any CPU.ActiveCfg = Debug-Net45|Any CPU
-		{23D1A639-99C4-4574-88CB-04E043BE055C}.Debug|Any CPU.Build.0 = Debug-Net45|Any CPU
-		{23D1A639-99C4-4574-88CB-04E043BE055C}.Debug-Net45|Any CPU.ActiveCfg = Debug-Net45|Any CPU
-		{23D1A639-99C4-4574-88CB-04E043BE055C}.Debug-Net45|Any CPU.Build.0 = Debug-Net45|Any CPU
-		{23D1A639-99C4-4574-88CB-04E043BE055C}.Release|Any CPU.ActiveCfg = Release-Net45|Any CPU
-		{23D1A639-99C4-4574-88CB-04E043BE055C}.Release|Any CPU.Build.0 = Release-Net45|Any CPU
-		{23D1A639-99C4-4574-88CB-04E043BE055C}.Release-Net45|Any CPU.ActiveCfg = Release-Net45|Any CPU
-		{23D1A639-99C4-4574-88CB-04E043BE055C}.Release-Net45|Any CPU.Build.0 = Release-Net45|Any CPU
+		{23D1A639-99C4-4574-88CB-04E043BE055C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23D1A639-99C4-4574-88CB-04E043BE055C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23D1A639-99C4-4574-88CB-04E043BE055C}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{23D1A639-99C4-4574-88CB-04E043BE055C}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

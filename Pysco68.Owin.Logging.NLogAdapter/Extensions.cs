@@ -1,12 +1,11 @@
-﻿using Microsoft.Owin;
-using Microsoft.Owin.Logging;
-using NLog;
-using Owin;
-using System;
-using System.Diagnostics;
-
-namespace Pysco68.Owin.Logging.NLogAdapter
+﻿namespace Pysco68.Owin.Logging.NLogAdapter
 {
+    using global::Owin;
+    using Microsoft.Owin.Logging;
+    using NLog;
+    using System;
+    using System.Diagnostics;
+
     /// <summary>
     /// Extension class
     /// </summary>
