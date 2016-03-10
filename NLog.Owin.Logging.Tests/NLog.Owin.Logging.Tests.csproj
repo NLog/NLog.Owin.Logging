@@ -65,8 +65,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LogAdapterCustomTranslationTable.cs" />
+    <Compile Include="OwinDisabledLoggerTest.cs" />
+    <Compile Include="OwinLoggerTest.cs" />
+    <Compile Include="OwinLoggerTestBase.cs" />
     <Compile Include="OwinTestApp.cs" />
-    <Compile Include="LogAdapterTest.cs" />
+    <Compile Include="StartupStandard.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

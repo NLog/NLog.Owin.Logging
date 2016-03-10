@@ -51,6 +51,12 @@ namespace NLog.Owin.Logging.Tests
                 case "/verbose":
                     _logger.WriteVerbose("verbose");
                     break;
+                case "/null":
+                    {
+                        //write null
+                        _logger.WriteVerbose(null);
+                        break;
+                    }
                 case "":
                     {
                         //nothing
