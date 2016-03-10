@@ -1,6 +1,6 @@
 # NLog.Owin.Logging
 
-The missing NLog logging adapter for OWIN!
+NLog logging adapter for OWIN!
 
 ## Installation
 
@@ -57,7 +57,7 @@ public class Startup
 	public void Configuration(IAppBuilder app)
 	{
 		// make a warning out of every log message!
-		app.UseNLog((lvl) => LogLevel.Warn);
+		app.UseNLog((eventType) => LogLevel.Warn);
 	}
 }
 ```
