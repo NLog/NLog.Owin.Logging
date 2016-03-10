@@ -1,5 +1,8 @@
 # NLog.Owin.Logging
 
+[![Build status](https://ci.appveyor.com/api/projects/status/25xa6el222x7fhwe/branch/master?svg=true)](https://ci.appveyor.com/project/nlog/nlog-owin-logging/branch/master)
+[![codecov.io](https://codecov.io/github/NLog/NLog.Owin.Logging/coverage.svg?branch=master)](https://codecov.io/github/NLog/NLog.Owin.Logging?branch=master)
+
 NLog logging adapter for OWIN!
 
 ## Installation
