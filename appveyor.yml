@@ -1,0 +1,27 @@
+version: 1.0.0.{build}
+clone_folder: c:\projects\nlog
+configuration: Release
+platform: Any CPU
+assembly_info:
+  patch: true
+  file: '**\AssemblyInfo.*'
+  assembly_file_version: '{version}'
+  assembly_informational_version: '1.0'
+nuget:
+  project_feed: true
+before_build:
+  - ps: nuget restore -DisableParallelProcessing
+matrix:
+  fast_finish: true
+build:
+  publish_nuget: true
+  publish_nuget_symbols: true
+  verbosity: quiet
+deploy: off
+test_script:
+  - nuget.exe install OpenCover -ExcludeVersion
+  - OpenCover\tools\OpenCover.Console.exe -register:user -target:"nunit-console.exe" -targetargs:"c:\projects\nlog\NLog.Owin.Logging.Tests\bin\Release\NLog.Owin.Logging.Tests.dll -noshadow"  -returntargetcode -filter:"+[NLog.Owin.Logging]*" -excludebyattribute:*.ExcludeFromCodeCoverage* -hideskipped:All -output:coverage.xml
+  - "SET PATH=C:\\Python34;C:\\Python34\\Scripts;%PATH%"
+  - pip install codecov
+  - codecov -f "coverage.xml"
+ 
