@@ -64,6 +64,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LogAdapterCustomTranslationTable.cs" />
     <Compile Include="OwinTestApp.cs" />
     <Compile Include="LogAdapterTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
