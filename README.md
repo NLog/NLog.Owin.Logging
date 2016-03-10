@@ -1,4 +1,4 @@
-# Pysco68.Owin.Logging.NLogAdapter
+# NLog.Owin.Logging
 
 The missing NLog logging adapter for OWIN!
 
@@ -6,7 +6,7 @@ The missing NLog logging adapter for OWIN!
 
 There's a nuget package you can install this way:
 
-`Install-Package Pysco68.Owin.Logging.NLogAdapter`
+> this will be back soon
 
 Currently there are dependencies on:
 
@@ -19,7 +19,7 @@ Currently there are dependencies on:
 To use the NLogAdapter with its default configuration:
 
 ```C#
-using Pysco68.Owin.Logging.NLogAdapter;
+using NLog.Owin.Logging;
 
 public class Startup
 {
@@ -48,7 +48,7 @@ The default translation table is:
 If you'd like to customize this translation table you can supply a `Func<TraceEventType, LogLevel>` to the extension above.
 
 ```C#
-using Pysco68.Owin.Logging.NLogAdapter;
+using NLog.Owin.Logging;
 using NLog;
 using System.Diagnostics;
 
