@@ -3,6 +3,7 @@ using Microsoft.Owin.Logging;
 using Owin;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,7 +33,8 @@ namespace NLog.Owin.Logging.Tests
 
         public override async Task Invoke(IOwinContext context)
         {
-            switch (context.Request.Path.Value)
+            var path = context.Request.Path.Value;
+            switch (path)
             {
                 case "/critical":
                     _logger.WriteCritical("critical"); ;
@@ -49,9 +51,33 @@ namespace NLog.Owin.Logging.Tests
                 case "/verbose":
                     _logger.WriteVerbose("verbose");
                     break;
+                case "":
+                    {
+                        //nothing
+                        break;
+                    }
+                default:
+                    TraceEventType traceEventType;
+                    if (Enum.TryParse(path.Substring(1), true, out traceEventType))
+                    {
+                        WriteCore(traceEventType);
+                    }
+                    break;
+
             }
 
             await context.Response.WriteAsync("Cool!");
+        }
+
+        /// <summary>
+        /// Write this traceEventType with <paramref name="traceEventType"/> to-stringed as message
+        /// </summary>
+        /// <param name="traceEventType"></param>
+        /// <returns></returns>
+        private bool WriteCore(TraceEventType traceEventType)
+        {
+
+            return _logger.WriteCore(traceEventType, 10, traceEventType.ToString(), null, (o, exception) => o.ToString());
         }
     }
 
