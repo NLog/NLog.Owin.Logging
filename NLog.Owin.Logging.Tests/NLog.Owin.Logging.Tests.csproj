@@ -64,8 +64,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="RequestPipelineTests.cs" />
-    <Compile Include="NLogAdapterTests.cs" />
+    <Compile Include="OwinTestApp.cs" />
+    <Compile Include="LogAdapterTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
