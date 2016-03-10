@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("NLog.Owin.Logging")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("NLog")]
 [assembly: AssemblyProduct("NLog.Owin.Logging")]
 [assembly: AssemblyCopyright("Copyright © Yannic Staudt & NLog 2016")]
 [assembly: AssemblyTrademark("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("5174fed6-0821-4080-ad98-b12953be37e3")]
+[assembly:Guid("84DC71BF-9C34-4801-ADA5-2E01BB0B63B2")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -29,8 +29,9 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 //
-// You can specify all the values or you can default the Build and Revision Numbers 
-// by using the '*' as shown below:
-// [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.1.0")]
+
+//Only change AssemblyVersion with major releases!
+[assembly: AssemblyVersion("1.0.0.0")]
+//always update AssemblyFileVersion with higher number!
 [assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyInformationalVersion("1.0")]
