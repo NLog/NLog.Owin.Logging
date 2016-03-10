@@ -1,27 +1,17 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+<?xml version="1.0" encoding="utf-8"?>
+<package>
     <metadata>
         <id>NLog.Owin.Logging</id>
-        <version>1.0.0</version>
-        <authors>NLog &amp; Yannic "Pysco68" Staudt</authors>
-        <owners>Pysco68</owners>
-        <licenseUrl>https://github.com/pysco68/Pysco68.Owin.Logging.NlogAdapter/raw/master/LICENSE</licenseUrl>
-        <projectUrl>https://github.com/pysco68/Pysco68.Owin.Logging.NlogAdapter</projectUrl>
+        <version>$version$</version>
+        <title>NLog.Owin.Logging</title>
+        <authors>NLog, Yannic "Pysco68" Staudt</authors>
+        <owners>Pysco68, NLog</owners>
+        <licenseUrl>https://github.com/NLog/NLog.Owin.Logging/raw/master/LICENSE</licenseUrl>
+        <projectUrl>https://github.com/NLog/NLog.Owin.Logging</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>A simple Nlog / OWIN log factory adapter</description>
         <releaseNotes>v1.0.0: First release under NLog project</releaseNotes>
         <tags>OWIN NLog Logging</tags>
-        <dependencies>
-            <group targetFramework=".NETFramework4.5">
-              <dependency id="NLog" version="[4.0, )" />
-              <dependency id="Owin" version="1.0" />
-              <dependency id="Microsoft.Owin" version="3.0.1" />
-            </group>
-        </dependencies>
+        <iconUrl>http://nlog-project.org/N.png</iconUrl>
     </metadata>
-    <files>
-        <file src="bin\Release\NLog.Owin.Logging.dll" target="lib\net45\NLog.Owin.Logging.dll" />
-        <file src="bin\Release\NLog.Owin.Logging.pdb" target="lib\net45\NLog.Owin.Logging.pdb" />
-      <file src="bin\Release\NLog.Owin.Logging.xml" target="lib\net45\NLog.Owin.Logging.xml" />
-    </files>
 </package>
