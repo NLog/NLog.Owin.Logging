@@ -1,4 +1,4 @@
-﻿namespace Pysco68.Owin.Logging.NLogAdapter
+﻿namespace NLog.Owin.Logging
 {
     using Microsoft.Owin.Logging;
     using NLog;

@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Pysco68.Owin.Logging.NLogAdapter")]
+[assembly: AssemblyTitle("NLog.Owin.Logging")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Pysco68.Owin.Logging.NLogAdapter")]
-[assembly: AssemblyCopyright("Copyright © Yannic Staudt 2014")]
+[assembly: AssemblyProduct("NLog.Owin.Logging")]
+[assembly: AssemblyCopyright("Copyright © Yannic Staudt & NLog 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -33,4 +33,4 @@ using System.Runtime.InteropServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.1.0")]
-[assembly: AssemblyFileVersion("1.0.1.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
