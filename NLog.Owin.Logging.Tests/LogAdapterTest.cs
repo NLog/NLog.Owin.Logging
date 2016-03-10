@@ -28,6 +28,7 @@ namespace NLog.Owin.Logging.Tests
     {
         private TestServer _server;
         private DebugTarget _debugTarget;
+        private DebugTarget _debugTargetOnlyFatal;
 
 
         [OneTimeSetUp]
@@ -36,10 +37,18 @@ namespace NLog.Owin.Logging.Tests
             _server = TestServer.Create<StartupStandard>();
 
             // setup the debug target
-            this._debugTarget = new DebugTarget();
-            this._debugTarget.Layout = "${level} ${message}";
+            _debugTarget = new DebugTarget { Layout = "${level} ${message}" };
+            _debugTargetOnlyFatal = new DebugTarget { Layout = "${level} ${message}" };
 
-            SimpleConfigurator.ConfigureForTargetLogging(_debugTarget, LogLevel.Trace);
+            var loggingConfiguration = new LoggingConfiguration();
+
+            loggingConfiguration.AddTarget("debug", _debugTarget);
+            loggingConfiguration.LoggingRules.Add(new LoggingRule("*", LogLevel.Trace, _debugTarget));
+            loggingConfiguration.AddTarget("debug-fatal-only", _debugTargetOnlyFatal);
+            loggingConfiguration.LoggingRules.Add(new LoggingRule("*", LogLevel.Fatal, _debugTargetOnlyFatal));
+
+
+            LogManager.Configuration = loggingConfiguration;
         }
 
         [OneTimeTearDown]
@@ -53,14 +62,46 @@ namespace NLog.Owin.Logging.Tests
         [TestCase("/warning", "warning", "Warn")]
         [TestCase("/information", "information", "Info")]
         [TestCase("/verbose", "verbose", "Trace")]
+        [TestCase("/start", "Start", "Debug")]
+        [TestCase("/stop", "Stop", "Debug")]
+        [TestCase("/suspend", "Suspend", "Debug")]
+        [TestCase("/Resume", "Resume", "Debug")]
+        [TestCase("/Transfer", "Transfer", "Debug")]
         public async Task TestLogmessages(string route, string expectedMessageEnd, string expectedLogLevel)
         {
-            var result = await _server.CreateRequest(route).GetAsync();
-            result.EnsureSuccessStatusCode();
+            await CallRoute(route);
 
             // note: the log messages end with watherver was logged thus we want to check for that
             Assert.That(_debugTarget.LastMessage, Does.StartWith(expectedLogLevel));
             Assert.That(_debugTarget.LastMessage, Does.EndWith(expectedMessageEnd));
+        }
+
+        /// <summary>
+        /// Test logger which is only enabled for fatal/critical.
+        /// </summary>
+        /// <param name="route"></param>
+        /// <param name="counterChange"></param>
+        /// <returns></returns>
+        [TestCase("/critical", 1)]
+        [TestCase("/error", 0)]
+        [TestCase("/warning", 0)]
+        public async Task TestDisabledLogger(string route, int counterChange)
+        {
+            //also before empty
+            var oldCounter = _debugTargetOnlyFatal.Counter;
+            int callCount = 5;
+            for (int i = 0; i < callCount; i++)
+            {
+                await CallRoute(route);
+            }
+
+            Assert.AreEqual(oldCounter + (counterChange * callCount), _debugTargetOnlyFatal.Counter);
+        }
+
+        private async Task CallRoute(string route)
+        {
+            var result = await _server.CreateRequest(route).GetAsync();
+            result.EnsureSuccessStatusCode();
         }
     }
 }
