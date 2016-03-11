@@ -51,6 +51,13 @@ namespace NLog.Owin.Logging.Tests
                 case "/verbose":
                     _logger.WriteVerbose("verbose");
                     break;
+                case "/invalid":
+                    {
+                        //write invalid TraceEventType
+                        TraceEventType wrongType = (TraceEventType) (-100);
+                        WriteCore(wrongType);
+                        break;
+                    }
                 case "/null":
                     {
                         //write null

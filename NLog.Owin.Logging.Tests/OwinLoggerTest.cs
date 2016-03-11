@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using NLog.Config;
 using NLog.Targets;
@@ -50,6 +51,13 @@ namespace NLog.Owin.Logging.Tests
             var oldCounter = _debugTarget.Counter;
             await CallRoute("/null");
             Assert.AreEqual(oldCounter, _debugTarget.Counter);
+        }
+
+
+        [Test]
+        public void TestUnknownEventType()
+        {
+            Assert.ThrowsAsync<ArgumentOutOfRangeException> (() => CallRoute("/invalid"));
         }
     }
 }
