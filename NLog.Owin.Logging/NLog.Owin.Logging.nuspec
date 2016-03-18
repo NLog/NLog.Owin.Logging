@@ -9,7 +9,7 @@
         <licenseUrl>https://github.com/NLog/NLog.Owin.Logging/raw/master/LICENSE</licenseUrl>
         <projectUrl>https://github.com/NLog/NLog.Owin.Logging</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>A simple Nlog / OWIN log factory adapter</description>
+        <description>NLog logging adapter for OWIN</description>
         <releaseNotes>v1.0.0: First release under NLog project</releaseNotes>
         <tags>OWIN NLog Logging</tags>
         <iconUrl>http://nlog-project.org/N.png</iconUrl>
