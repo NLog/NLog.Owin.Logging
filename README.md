@@ -9,7 +9,7 @@ NLog logging adapter for OWIN!
 
 There's a nuget package you can install this way:
 
-> this will be back soon
+> Install-Package NLog.Owin.Logging
 
 Currently there are dependencies on:
 
