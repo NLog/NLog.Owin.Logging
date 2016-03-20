@@ -2,6 +2,7 @@
 
 [![Build status](https://ci.appveyor.com/api/projects/status/25xa6el222x7fhwe/branch/master?svg=true)](https://ci.appveyor.com/project/nlog/nlog-owin-logging/branch/master)
 [![codecov.io](https://codecov.io/github/NLog/NLog.Owin.Logging/coverage.svg?branch=master)](https://codecov.io/github/NLog/NLog.Owin.Logging?branch=master)
+[![Version](https://badge.fury.io/nu/NLog.Owin.Logging.svg)](https://www.nuget.org/packages/NLog.Owin.Logging)
 
 NLog logging adapter for OWIN!
 
