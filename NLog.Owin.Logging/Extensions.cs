@@ -17,6 +17,7 @@
         /// <param name="app"></param>
         public static void UseNLog(this IAppBuilder app)
         {
+            InitSetup();
             app.SetLoggerFactory(new NLogFactory());
         }
 
@@ -27,7 +28,14 @@
         /// <param name="getLogLevel"></param>
         public static void UseNLog(this IAppBuilder app, Func<TraceEventType, LogLevel> getLogLevel)
         {
+            InitSetup();
             app.SetLoggerFactory(new NLogFactory(getLogLevel));
+        }
+        
+        private static void InitSetup()
+        {
+            LogManager.AddHiddenAssembly(typeof(NLogFactory).Assembly);//NLog.Owin.Logging
+            LogManager.AddHiddenAssembly(typeof(LoggerExtensions).Assembly);//Microsoft.Owin.Logging
         }
     }
 }
