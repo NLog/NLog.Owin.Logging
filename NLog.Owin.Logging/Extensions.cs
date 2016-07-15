@@ -15,10 +15,11 @@
         /// Set the logger factory for this app builder to NLogFactory
         /// </summary>
         /// <param name="app"></param>
-        public static void UseNLog(this IAppBuilder app)
+        public static IAppBuilder UseNLog(this IAppBuilder app)
         {
             InitSetup();
             app.SetLoggerFactory(new NLogFactory());
+            return app;
         }
 
         /// <summary>
@@ -26,10 +27,11 @@
         /// </summary>
         /// <param name="app"></param>
         /// <param name="getLogLevel"></param>
-        public static void UseNLog(this IAppBuilder app, Func<TraceEventType, LogLevel> getLogLevel)
+        public static IAppBuilder UseNLog(this IAppBuilder app, Func<TraceEventType, LogLevel> getLogLevel)
         {
             InitSetup();
             app.SetLoggerFactory(new NLogFactory(getLogLevel));
+            return app;
         }
         
         private static void InitSetup()
