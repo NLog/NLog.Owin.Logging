@@ -106,7 +106,10 @@
                     return false;
                 }
 
-                this._logger.Log(level, exception, formatter(state, exception));
+                var logEvent = LogEventInfo.Create(level, _logger.Name, exception, _logger.Factory.DefaultCultureInfo, formatter(state, exception));
+                logEvent.Properties["EventId"] = eventId;
+                _logger.Log(logEvent);
+
                 return true;
             }
         }
