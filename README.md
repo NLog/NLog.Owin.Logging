@@ -68,6 +68,7 @@ public class Startup
 
 ## Note / Information
 
+(Added in version 1.1) 
 Any `EventId` passed to this `Microsoft.Owin.Logging.ILogger.WriteCore()` implementation is passed down to NLog in the log event's properties, and can be written to output by adding the matching line in the Log appender layout:
 
 ```
