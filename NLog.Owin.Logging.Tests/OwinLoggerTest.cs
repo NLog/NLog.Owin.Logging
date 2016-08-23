@@ -15,7 +15,7 @@ namespace NLog.Owin.Logging.Tests
         public void InitConfig()
         {
             // setup the debug target
-            _debugTarget = new DebugTarget { Layout = "${level} ${message}" };
+            _debugTarget = new DebugTarget { Layout = "${level} EventId:${event-properties:item=EventId} ${message}" };
 
             var loggingConfiguration = new LoggingConfiguration();
 
@@ -58,6 +58,16 @@ namespace NLog.Owin.Logging.Tests
         public void TestUnknownEventType()
         {
             Assert.ThrowsAsync<ArgumentOutOfRangeException> (() => CallRoute("/invalid"));
+        }
+
+        [Test]
+        public async Task TestWriteCoreWithEventId()
+        {
+            await CallRoute("/eventid");
+
+            // note: hardcoded event id = 140 in OwinTestApp.cs
+            Assert.That(_debugTarget.LastMessage, Does.StartWith("Info"));
+            Assert.That(_debugTarget.LastMessage, Does.Contain("EventId:140"));
         }
     }
 }
