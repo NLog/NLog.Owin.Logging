@@ -14,13 +14,13 @@ dotnet_csproj:
 skip_tags: true
 build_script:	
   - ps: msbuild /t:restore,build /p:Configuration=Release /p:IncludeSymbols=true /p:SymbolPackageFormat=snupkg /maxcpucount /v:m
-
 test_script:
   - nuget.exe install OpenCover -ExcludeVersion
-  - OpenCover\tools\OpenCover.Console.exe -register:user -target:"nunit3-console.exe" -targetargs:"c:\projects\nlog\NLog.Owin.Logging.Tests\bin\Release\NLog.Owin.Logging.Tests.dll"  -returntargetcode -filter:"+[NLog.Owin.Logging]*" -excludebyattribute:*.ExcludeFromCodeCoverage* -hideskipped:All -output:coverage.xml
+  - OpenCover\tools\OpenCover.Console.exe -register:user -target:"nunit3-console.exe" -targetargs:"c:\projects\nlog\NLog.Owin.Logging.Tests\bin\Release\net452\NLog.Owin.Logging.Tests.dll"  -returntargetcode -filter:"+[NLog.Owin.Logging]*" -excludebyattribute:*.ExcludeFromCodeCoverage* -hideskipped:All -output:coverage.xml
   - "SET PATH=C:\\Python34;C:\\Python34\\Scripts;%PATH%"
   - pip install codecov
   - codecov -f "coverage.xml"
+ 
  
 artifacts:
   - path: '**\NLog.*.nupkg'
