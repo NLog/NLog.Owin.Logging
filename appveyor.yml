@@ -1,25 +1,20 @@
-image: Visual Studio 2017
+image: Visual Studio 2019
 version: 1.0.0.{build}
 clone_folder: c:\projects\nlog
 configuration: Release
 platform: Any CPU
-assembly_info:
+dotnet_csproj:
   patch: true
-  file: '**\AssemblyInfo.*'
-  assembly_version: '1.0.0' #only change on major releases
-  assembly_file_version: '{version}'
-  assembly_informational_version: '1.1'
-nuget:
-  project_feed: true
-before_build:
-  - ps: nuget restore -DisableParallelProcessing
-matrix:
-  fast_finish: true
-build:
-  publish_nuget: true
-  publish_nuget_symbols: true
-  verbosity: quiet
-deploy: off
+  file: '**\*.csproj'
+  assembly_version: '1.0.0'  #only change on major releases
+  file_version: '{version}'
+  package_version: '1.1'
+  informational_version: '1.1'
+  version: '1.1'
+skip_tags: true
+build_script:	
+  - ps: msbuild /t:restore,build /p:Configuration=Release /p:IncludeSymbols=true /p:SymbolPackageFormat=snupkg /maxcpucount /v:m
+
 test_script:
   - nuget.exe install OpenCover -ExcludeVersion
   - OpenCover\tools\OpenCover.Console.exe -register:user -target:"nunit3-console.exe" -targetargs:"c:\projects\nlog\NLog.Owin.Logging.Tests\bin\Release\NLog.Owin.Logging.Tests.dll"  -returntargetcode -filter:"+[NLog.Owin.Logging]*" -excludebyattribute:*.ExcludeFromCodeCoverage* -hideskipped:All -output:coverage.xml
@@ -27,3 +22,6 @@ test_script:
   - pip install codecov
   - codecov -f "coverage.xml"
  
+artifacts:
+  - path: '**\NLog.*.nupkg'
+  - path: '**\NLog.*.snupkg'
