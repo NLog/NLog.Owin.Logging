@@ -10,23 +10,18 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <Authors>NLog, Yannic "Pysco68" Staudt, Julian Verdurmen</Authors>
-    <PackageIconUrl>http://nlog-project.org/N.png</PackageIconUrl>
+    <PackageIconUrl>https://nlog-project.org/N.png</PackageIconUrl>
     <PackageId>NLog.Owin.Logging</PackageId>
     <PackageLicenseUrl>https://github.com/NLog/NLog.Owin.Logging/raw/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/NLog/NLog.Owin.Logging</PackageProjectUrl>
     <PackageTags>OWIN NLog Logging</PackageTags>
-  </PropertyGroup>
-  <PropertyGroup>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <SignAssembly>true</SignAssembly>
-  </PropertyGroup>
-  <PropertyGroup>
     <AssemblyOriginatorKeyFile>NLog.snk</AssemblyOriginatorKeyFile>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.*" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="Microsoft.Owin" Version="4.0.1" />
     <PackageReference Include="NLog" Version="4.6.2" />
     <PackageReference Include="Owin" Version="1.0" />
