@@ -4,8 +4,8 @@
     <Company>NLog</Company>
     <Product>NLog.Owin.Logging</Product>
     <Description>NLog logging adapter for OWIN</Description>
-		<CurrentYear>$([System.DateTime]::Now.ToString(yyyy))</CurrentYear>
-		<Copyright>Copyright © 2016-$(CurrentYear) Yannic Staudt &amp; NLog Project - https://nlog-project.org/ </Copyright>
+    <CurrentYear>$([System.DateTime]::Now.ToString(yyyy))</CurrentYear>
+    <Copyright>Copyright © 2016-$(CurrentYear) Yannic Staudt &amp; NLog Project - https://nlog-project.org/ </Copyright>
     <Version>1.0</Version>
     <TargetFramework>net45</TargetFramework>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
@@ -23,7 +23,12 @@
     <AssemblyOriginatorKeyFile>NLog.snk</AssemblyOriginatorKeyFile>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <IsPackable>true</IsPackable>
-   <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <PackageReleaseNotes>
+- Updated to NLog v5
+- Updated to Microsoft.Owin v4.2.2
+- Enabled Deterministic build + SourceLink
+    </PackageReleaseNotes>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Owin" Version="4.2.2" />
