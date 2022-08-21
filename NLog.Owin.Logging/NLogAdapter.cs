@@ -4,16 +4,19 @@
     using NLog;
     using System;
     using System.Diagnostics;
+    using System.Linq;
 
     /// <summary>
     /// The OWIN ILoggerFactory implementation for NLog
     /// </summary>
     public class NLogFactory : ILoggerFactory
     {
+        private static readonly object[] EventIdMapper = Enumerable.Range(0, 1000).Select(id => (object)id).ToArray();
+
         /// <summary>
         /// The log level translation function to get a NLog loglevel
         /// </summary>
-        Func<TraceEventType, LogLevel> _getLogLevel;
+        private readonly Func<TraceEventType, LogLevel> _getLogLevel;
 
         /// <summary>
         /// Create a logger factory with the default translation
@@ -79,11 +82,11 @@
         /// <summary>
         /// The wrapper arround NLog. Translates the logging levels
         /// </summary>
-        class Logger : Microsoft.Owin.Logging.ILogger
+        private sealed class Logger : Microsoft.Owin.Logging.ILogger
         {
-            Func<TraceEventType, LogLevel> _getLogLevel;
+            private readonly Func<TraceEventType, LogLevel> _getLogLevel;
 
-            readonly NLog.Logger _logger;
+            private readonly NLog.Logger _logger;
            
             internal Logger(string name, Func<TraceEventType, LogLevel> getLogLevel)
             {
@@ -94,7 +97,7 @@
             public bool WriteCore(TraceEventType eventType, int eventId, object state, Exception exception, Func<object, Exception, string> formatter)
             {
                 var level = this._getLogLevel(eventType);
-                
+
                 // According to docs http://katanaproject.codeplex.com/SourceControl/latest#src/Microsoft.Owin/Logging/ILogger.cs
                 // "To check IsEnabled call WriteCore with only TraceEventType and check the return value, no event will be written."
                 if (state == null)
@@ -107,10 +110,21 @@
                 }
 
                 var logEvent = LogEventInfo.Create(level, _logger.Name, exception, _logger.Factory.DefaultCultureInfo, formatter(state, exception));
-                logEvent.Properties["EventId"] = eventId;
-                _logger.Log(logEvent);
+                if (eventId != 0)
+                {
+                    logEvent.Properties["EventId"] = GetEventId(eventId);
+                }
 
+                _logger.Log(logEvent);
                 return true;
+            }
+
+            private static object GetEventId(int eventId)
+            {
+                if (eventId > 0 && eventId < EventIdMapper.Length)
+                    return EventIdMapper[eventId];
+                else
+                    return eventId;
             }
         }
     }
