@@ -1,4 +1,4 @@
-image: Visual Studio 2019
+image: Visual Studio 2022
 version: 1.0.0.{build}
 clone_folder: c:\projects\nlog
 configuration: Release
@@ -20,7 +20,6 @@ test_script:
   - "SET PATH=C:\\Python34;C:\\Python34\\Scripts;%PATH%"
   - pip install codecov
   - codecov -f "coverage.xml"
- 
  
 artifacts:
   - path: '**\NLog.*.nupkg'
