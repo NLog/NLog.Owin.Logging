@@ -13,7 +13,7 @@ dotnet_csproj:
   version: '1.1'
 skip_tags: true
 build_script:	
-  - ps: msbuild /t:restore,build /p:Configuration=Release /p:IncludeSymbols=true /p:SymbolPackageFormat=snupkg /maxcpucount /v:m
+  - ps: msbuild /t:restore,build /p:Configuration=Release /p:IncludeSymbols=true /p:SymbolPackageFormat=snupkg /verbosity:minimal /p:ContinuousIntegrationBuild=true
 test_script:
   - nuget.exe install OpenCover -ExcludeVersion
   - OpenCover\tools\OpenCover.Console.exe -register:user -target:"nunit3-console.exe" -targetargs:"c:\projects\nlog\NLog.Owin.Logging.Tests\bin\Release\net452\NLog.Owin.Logging.Tests.dll"  -returntargetcode -filter:"+[NLog.Owin.Logging]*" -excludebyattribute:*.ExcludeFromCodeCoverage* -hideskipped:All -output:coverage.xml
