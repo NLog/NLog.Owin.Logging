@@ -12,12 +12,6 @@ There's a nuget package you can install this way:
 
 > Install-Package NLog.Owin.Logging
 
-Currently there are dependencies on:
-
-| Target framework | Dependencies |
-|---|---|
-| .NET 4.5 | NLog (>= 5.0.0.0), Owin (>= 1.0) |
-
 ## Using
 
 To use the NLogAdapter with its default configuration:
