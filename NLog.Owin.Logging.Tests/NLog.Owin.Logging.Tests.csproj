@@ -1,7 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net452</TargetFramework>
-    <AssemblyTitle>Pysco68.Owin.Logging.NLogAdapter.Tests</AssemblyTitle>
     <Product>NLog.Owin.Logging.Tests</Product>
     <Copyright>Copyright ©  2016-2019</Copyright>
     <IsPackable>false</IsPackable>
@@ -10,7 +9,7 @@
     <PackageReference Include="Microsoft.Owin.Hosting" Version="4.2.2" />
     <PackageReference Include="Microsoft.Owin.Testing" Version="4.2.2" />
     <PackageReference Include="NUnit" Version="3.13.3" />
-    <PackageReference Include="NUnit3TestAdapter" Version="4.2.1" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
