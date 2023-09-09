@@ -6,7 +6,7 @@
     <Description>NLog logging adapter for OWIN</Description>
     <CurrentYear>$([System.DateTime]::Now.ToString(yyyy))</CurrentYear>
     <Copyright>Copyright © 2016-$(CurrentYear) Yannic Staudt &amp; NLog Project - https://nlog-project.org/ </Copyright>
-    <Version>1.0</Version>
+    <Version>4.0</Version>
     <TargetFramework>net45</TargetFramework>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <Authors>NLog, Yannic "Pysco68" Staudt, Julian Verdurmen</Authors>
@@ -21,13 +21,14 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>NLog.snk</AssemblyOriginatorKeyFile>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <IsPackable>true</IsPackable>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <PackageReleaseNotes>
-- Updated to NLog v5
+- Updated to NLog v4.7.15
 - Updated to Microsoft.Owin v4.2.2
 - Enabled Deterministic build + SourceLink
+- Only emit EventId-property when non-zero
     </PackageReleaseNotes>
   </PropertyGroup>
   <ItemGroup>
@@ -36,7 +37,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="NLog" Version="5.0.2" />
+    <PackageReference Include="NLog" Version="4.7.15" />
   </ItemGroup>
   <ItemGroup>
     <None Include="NLog.snk" />
