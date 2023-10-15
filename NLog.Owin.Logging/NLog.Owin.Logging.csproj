@@ -29,6 +29,8 @@
 - Updated to Microsoft.Owin v4.2.2
 - Enabled Deterministic build + SourceLink
 - Only emit EventId-property when non-zero
+
+See https://github.com/NLog/NLog.Owin.Logging for documentation of NLog intergration with OWIN.
     </PackageReleaseNotes>
   </PropertyGroup>
   <ItemGroup>
