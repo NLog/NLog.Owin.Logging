@@ -15,10 +15,9 @@ namespace NLog.Owin.Logging.Tests
         public void InitConfig()
         {
             // setup the debug target
-            _debugTarget = new DebugTarget { Layout = "${level} EventId:${event-properties:item=EventId} ${message}" };
+            _debugTarget = new DebugTarget { Layout = "${level} EventId:${event-properties:item=EventId} ${logger} ${callsite} ${message}" };
 
             var loggingConfiguration = new LoggingConfiguration();
-
             loggingConfiguration.AddTarget("debug", _debugTarget);
             loggingConfiguration.LoggingRules.Add(new LoggingRule("*", LogLevel.Trace, _debugTarget));
 

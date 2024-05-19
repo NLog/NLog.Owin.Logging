@@ -100,7 +100,7 @@
 
                 // According to docs http://katanaproject.codeplex.com/SourceControl/latest#src/Microsoft.Owin/Logging/ILogger.cs
                 // "To check IsEnabled call WriteCore with only TraceEventType and check the return value, no event will be written."
-                if (state == null)
+                if (state is null)
                 {
                     return this._logger.IsEnabled(level);
                 }
@@ -109,13 +109,13 @@
                     return false;
                 }
 
-                var logEvent = LogEventInfo.Create(level, _logger.Name, exception, _logger.Factory.DefaultCultureInfo, formatter(state, exception));
+                var logEvent = LogEventInfo.Create(level, _logger.Name, exception, (IFormatProvider)null, formatter(state, exception));
                 if (eventId != 0)
                 {
                     logEvent.Properties["EventId"] = GetEventId(eventId);
                 }
 
-                _logger.Log(logEvent);
+                _logger.Log(typeof(Microsoft.Owin.Logging.ILogger), logEvent);
                 return true;
             }
 
