@@ -38,10 +38,13 @@ namespace NLog.Owin.Logging.Tests
             _server = TestServer.Create<StartupCustomTranslationTable>();
 
             // setup the debug target
-            this._debugTarget = new DebugTarget();
-            this._debugTarget.Layout = "${level} ${message}";
+            this._debugTarget = new DebugTarget { Layout = "${level} EventId:${event-properties:item=EventId} ${logger} ${callsite} ${message}" };
 
-            SimpleConfigurator.ConfigureForTargetLogging(_debugTarget, LogLevel.Trace);
+            var loggingConfiguration = new LoggingConfiguration();
+            loggingConfiguration.AddTarget("debug", _debugTarget);
+            loggingConfiguration.LoggingRules.Add(new LoggingRule("*", LogLevel.Trace, _debugTarget));
+
+            LogManager.Configuration = loggingConfiguration;
         }
 
         [OneTimeTearDown]
