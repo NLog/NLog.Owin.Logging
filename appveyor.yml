@@ -12,6 +12,7 @@ dotnet_csproj:
   informational_version: '4.0'
   version: '4.0'
 skip_tags: true
+skip_branch_with_pr: true
 nuget:
   disable_publish_on_pr: true
 build_script:	
