@@ -49,7 +49,7 @@ namespace NLog.Owin.Logging.Tests
         {
             var oldCounter = _debugTarget.Counter;
             await CallRoute("/null");
-            Assert.AreEqual(oldCounter, _debugTarget.Counter);
+            Assert.That(_debugTarget.Counter, Is.EqualTo(oldCounter));
         }
 
 

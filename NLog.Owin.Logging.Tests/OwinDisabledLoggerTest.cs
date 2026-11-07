@@ -44,7 +44,7 @@ namespace NLog.Owin.Logging.Tests
                 await CallRoute(route);
             }
 
-            Assert.AreEqual(oldCounter + (counterChange * callCount), _debugTargetOnlyFatal.Counter);
+            Assert.That(_debugTargetOnlyFatal.Counter, Is.EqualTo(oldCounter + (counterChange * callCount)));
         }
 
     }
