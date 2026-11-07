@@ -36,8 +36,11 @@
         
         private static void InitSetup()
         {
-            LogManager.AddHiddenAssembly(typeof(NLogFactory).Assembly);//NLog.Owin.Logging
-            LogManager.AddHiddenAssembly(typeof(LoggerExtensions).Assembly);//Microsoft.Owin.Logging
+            LogManager.Setup().SetupLogFactory(setup =>
+            {
+                setup.AddCallSiteHiddenAssembly(typeof(NLogFactory).Assembly);
+                setup.AddCallSiteHiddenAssembly(typeof(LoggerExtensions).Assembly);
+            });
         }
     }
 }
