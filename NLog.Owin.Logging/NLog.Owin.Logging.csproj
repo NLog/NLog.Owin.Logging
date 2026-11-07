@@ -9,7 +9,7 @@
     <VersionPrefix>6.2.2</VersionPrefix>
     <AssemblyVersion>6.0.0.0</AssemblyVersion>
     <FileVersion>$(VersionPrefix).0</FileVersion>
-    <TargetFramework>net45</TargetFramework>
+    <TargetFramework>net46</TargetFramework>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <Authors>NLog, Yannic "Pysco68" Staudt, Julian Verdurmen</Authors>
     <PackageIcon>N.png</PackageIcon>
@@ -28,12 +28,14 @@
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <PackageReleaseNotes>
   Update NLog to 6.2.2
+  Update Microsoft.Owin to 4.2.3
+  Update TargetFramework to net46
 
 See https://github.com/NLog/NLog.Owin.Logging for documentation of NLog intergration with OWIN.
     </PackageReleaseNotes>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Owin" Version="4.2.2" />
+    <PackageReference Include="Microsoft.Owin" Version="4.2.3" />
     <PackageReference Include="NLog" Version="6.2.2" />
   </ItemGroup>
   <ItemGroup>
