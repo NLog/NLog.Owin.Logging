@@ -27,9 +27,9 @@
     <IsPackable>true</IsPackable>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <PackageReleaseNotes>
-  Update NLog to 6.2.2
-  Update Microsoft.Owin to 4.2.3
-  Update TargetFramework to net46
+  - Update NLog to 6.2.2
+  - Update Microsoft.Owin to 4.2.3
+  - Update TargetFramework to .NET 4.6
 
 See https://github.com/NLog/NLog.Owin.Logging for documentation of NLog intergration with OWIN.
     </PackageReleaseNotes>
