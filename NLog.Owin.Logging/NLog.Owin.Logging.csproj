@@ -6,7 +6,9 @@
     <Description>NLog logging adapter for OWIN</Description>
     <CurrentYear>$([System.DateTime]::Now.ToString(yyyy))</CurrentYear>
     <Copyright>Copyright © 2016-$(CurrentYear) Yannic Staudt &amp; NLog Project - https://nlog-project.org/ </Copyright>
-    <Version>4.0</Version>
+    <VersionPrefix>4.0</VersionPrefix>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <FileVersion>4.0.0.0</FileVersion>
     <TargetFramework>net45</TargetFramework>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <Authors>NLog, Yannic "Pysco68" Staudt, Julian Verdurmen</Authors>
@@ -35,10 +37,6 @@ See https://github.com/NLog/NLog.Owin.Logging for documentation of NLog intergra
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Owin" Version="4.2.2" />
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
     <PackageReference Include="NLog" Version="4.7.15" />
   </ItemGroup>
   <ItemGroup>
